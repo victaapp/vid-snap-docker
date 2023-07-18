@@ -1,0 +1,9 @@
+FROM python:3.10.4-slim
+
+# 1. Disable python process buffering
+ENV PYTHONUNBUFFERD 1
+
+# 2. Change working directory to /app/server
+WORKDIR /app/server
+RUN apt-get update -y && \
+    apt install wget unzip -y
