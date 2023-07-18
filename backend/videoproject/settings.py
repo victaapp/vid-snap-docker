@@ -17,17 +17,14 @@ import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = True
-
-ALLOWED_HOSTS=['*']
 
 env = environ.Env(
-    # ALLOWED_HOSTS=(list, []),
-    # DEBUG=(bool, False),
+    ALLOWED_HOSTS=(list, []),
+    DEBUG=(bool, False),
     SECRET_KEY=(str, ""),
-    # NAME=(str, ""),
-    # USER=(str, ""),
-    # PASSWORD=(str, ""),
+    NAME=(str, ""),
+    USER=(str, ""),
+    PASSWORD=(str, ""),
 )
 
 # reading .env file

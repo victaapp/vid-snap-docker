@@ -18,7 +18,7 @@ def time_to_seconds(time_obj):
     )
 
 
-def add_subtitles(video_path, subtitles_path, output_path):
+def add_subtitles(video_path, subtitles_path, output_path, video):
 
     ffmpeg.input(video_path).output(output_path, vf='subtitles=' + subtitles_path).run(overwrite_output=True)
 
@@ -39,7 +39,7 @@ def merge_clips(video, subtitle_file):
     
     subtitles_url = "videoproject/" + subtitle_file.subtitle.url
     
-    add_subtitles(video_clip_url, subtitles_url, output_video_file)
+    add_subtitles(video_clip_url, subtitles_url, output_video_file, video)
 
     # Get processed video file path and store it in the table.
     cleaned_path = os.path.normpath(output_video_file)
